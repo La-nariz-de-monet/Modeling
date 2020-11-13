@@ -4,7 +4,13 @@ from sympy import *
 
 x = Symbol("x") # Definimos x como simbolo
 
-formulae = 'x^3+1.0+sin(x)' # Definimos la función 
+#Abrir archivo con la formula
+with open("model.dat","r") as f:
+    formulae = f.readline() #Leemos la formula en nuestro archivo
+
+
+
+#formulae = 'x^3+1.0+sin(x)' # Definimos la función 
 
 # Esto ya no es str sino es una función simbolica en la
 # que x es un simbolo 
