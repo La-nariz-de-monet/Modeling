@@ -7,6 +7,8 @@
 1 _ _ r R
 
 R _ 0 l l
+w1 _ 1 l l
+
 
 l 1 1 l l
 l 0 0 l l
@@ -14,16 +16,22 @@ l _ _ l ml
 
 ml 1 1 l ml
 ml 0 0 l ml
-ml _ _ l cl
+ml _ _ * searchleft
+
+searchleft 1 1 * cl
+searchleft 0 0 * cl
+searchleft _ _ l searchleft
 
 cl 1 _ l cl1
 cl 0 _ l cl0
 
 cl1 1 1 r sr1
 cl1 0 0 r sr1
+cl1 _ _ r lastsumleft1
 
 cl0 1 1 r sr0
 cl0 0 0 r sr0
+cl0 _ _ r lastsumleft0
 
 sr1 1 1 * sl1
 sr1 0 0 * sl1
@@ -49,15 +57,17 @@ cr0 0 _ l r0
 
 r2 1 1 r s2
 r2 0 0 r s2
+r2 _ _ r onlycopys2
 
 r1 1 1 r s1
 r1 0 0 r s1
+r1 _ _ r onlycopys1
 
 r0 1 1 r s0
 r0 0 0 r s0
 
-s2 1 1 l w2
-s2 0 0 l w2
+s2 1 1 l w1
+s2 0 0 l w1
 s2 _ _ r s2
 
 s1 1 0 l w1
@@ -67,3 +77,93 @@ s1 _ _ r s1
 s0 1 1 l R
 s0 0 0 l R
 s0 _ _ r s0
+
+
+
+lastsumleft1 1 1 * lastsleft1find
+lastsumleft1 0 0 * lastsleft1find
+lastsumleft1 _ _ r lastsumleft1
+
+lastsumleft0 1 1 * lastsleft0find
+lastsumleft0 0 0 * lastsleft0find
+lastsumleft0 _ _ r lastsumleft0
+
+lastsleft1find 1 1 r lastsleft1find
+lastsleft1find 0 0 r lastsleft1find
+lastsleft1find _ _ l checkfinishleft1
+
+lastsleft0find 1 1 r lastsleft0find
+lastsleft0find 0 0 r lastsleft0find
+lastsleft0find _ _ l checkfinishleft0
+
+checkfinishleft1 1 _ l lastsum2
+checkfinishleft1 0 _ l lastsum1
+
+checkfinishleft0 1 _ l lastsum1
+checkfinishleft0 0 _ l lastsum0
+
+lastsum2 1 1 r onlycopys2
+lastsum2 0 0 r onlycopys2
+lastsum2 _ _ r last2
+
+lastsum1 1 1 r onlycopys1
+lastsum1 0 0 r onlycopys1
+lastsum1 _ _ r last1
+
+lastsum0 1 1 r onlycopys0
+lastsum0 0 0 r onlycopys0
+lastsum0 _ _ r last0
+
+onlycopys2 1 1 l copywrite1
+onlycopys2 0 0 l copywrite1
+onlycopys2 _ _ r onlycopys2
+
+onlycopys1 1 0 l copywrite1
+onlycopys1 0 1 l copywrite0
+onlycopys1 _ _ r onlycopys1
+
+onlycopys0 1 1 l copywrite0
+onlycopys0 0 0 l copywrite0
+onlycopys0 _ _ r onlycopys0
+
+copywrite1 _ 1 l copysearch
+copywrite0 _ 0 l copysearch
+
+copysearch 1 _ l copyread1
+copysearch 0 _ l copyread0
+copysearch _ _ l copysearch
+
+copyread1 1 1 r copymove1
+copyread1 0 0 r copymove1
+copyread1 _ _ r finishmove1
+
+copyread0 1 1 r copymove0
+copyread0 0 0 r copymove0
+copyread0 _ _ r finishmove0
+
+copymove1 1 0 l copywrite1
+copymove1 0 1 l copywrite0
+copymove1 _ _ r copymove1
+
+copymove0 1 1 l copywrite0
+copymove0 0 0 l copywrite0
+copymove0 _ _ r copymove0
+
+finishmove1 1 0 l lastwrite1
+finishmove1 0 0 l lastwrite1
+finishmove1 _ _ r finishmove1
+
+finishmove0 1 1 l lastwrite0
+finishmove0 0 0 l lastwrite0
+finishmove0 _ _ r finishmove0
+
+last2 1 1 l lastwrite1
+last2 0 0 l lastwrite1
+last2 _ _ r last2
+
+last1 1 0 l lastwrite1
+last1 0 1 l lastwrite0
+last1 _ _ r last1
+
+lastwrite1 _ 1 * halt-accept
+lastwrite0 _ 0 * halt-accept
