@@ -1,0 +1,69 @@
+0 1 1 r 0
+0 0 0 r 0
+0 _ _ r 1
+
+1 1 1 r 1
+1 0 0 r 1
+1 _ _ r R
+
+R _ 0 l l
+
+l 1 1 l l
+l 0 0 l l
+l _ _ l ml
+
+ml 1 1 l ml
+ml 0 0 l ml
+ml _ _ l cl
+
+cl 1 _ l cl1
+cl 0 _ l cl0
+
+cl1 1 1 r sr1
+cl1 0 0 r sr1
+
+cl0 1 1 r sr0
+cl0 0 0 r sr0
+
+sr1 1 1 * sl1
+sr1 0 0 * sl1
+sr1 _ _ r sr1
+
+sr0 1 1 * sl0
+sr0 0 0 * sl0
+sr0 _ _ r sr0
+
+sl1 1 1 r sl1
+sl1 0 0 r sl1
+sl1 _ _ l cr1
+
+sl0 1 1 r sl0
+sl0 0 0 r sl0
+sl0 _ _ l cr0
+
+cr1 1 _ l r2
+cr1 0 _ l r1
+
+cr0 1 _ l r1
+cr0 0 _ l r0
+
+r2 1 1 r s2
+r2 0 0 r s2
+
+r1 1 1 r s1
+r1 0 0 r s1
+
+r0 1 1 r s0
+r0 0 0 r s0
+
+s2 1 1 l w2
+s2 0 0 l w2
+s2 _ _ r s2
+
+s1 1 0 l w1
+s1 0 1 l R
+s1 _ _ r s1
+
+s0 1 1 l R
+s0 0 0 l R
+s0 _ _ r s0
