@@ -1,169 +1,168 @@
 0 1 1 r 0
 0 0 0 r 0
-0 _ _ r 1
+0 _ _ r init2
 
-1 1 1 r 1
-1 0 0 r 1
-1 _ _ r R
+init2 1 1 r init2
+init2 0 0 r init2
+init2 _ _ r write0
 
-R _ 0 l l
-w1 _ 1 l l
+write0 _ 0 l moveLeft
+write1 _ 1 l moveLeft
 
 
-l 1 1 l l
-l 0 0 l l
-l _ _ l ml
+moveLeft 1 1 l moveLeft
+moveLeft 0 0 l moveLeft
+moveLeft _ _ l moveLeft2
 
-ml 1 1 l ml
-ml 0 0 l ml
-ml _ _ * searchleft
+moveLeft2 1 1 l moveLeft2
+moveLeft2 0 0 l moveLeft2
+moveLeft2 _ _ * searchleft
 
-searchleft 1 1 * cl
-searchleft 0 0 * cl
+searchleft 1 1 * checkDigitLeft
+searchleft 0 0 * checkDigitLeft
 searchleft _ _ l searchleft
 
-cl 1 _ l cl1
-cl 0 _ l cl0
+checkDigitLeft 1 _ l digitLeft1
+checkDigitLeft 0 _ l digitLeft0
 
-cl1 1 1 r sr1
-cl1 0 0 r sr1
-cl1 _ _ r lastsumleft1
+digitLeft1 1 1 r left1
+digitLeft1 0 0 r left1
+digitLeft1 _ _ r lastSumLeft1
 
-cl0 1 1 r sr0
-cl0 0 0 r sr0
-cl0 _ _ r lastsumleft0
+digitLeft0 1 1 r left0
+digitLeft0 0 0 r left0
+digitLeft0 _ _ r lastSumLeft0
 
-sr1 1 1 * sl1
-sr1 0 0 * sl1
-sr1 _ _ r sr1
+left1 1 1 * left1SerchRight
+left1 0 0 * left1SerchRight
+left1 _ _ r left1
 
-sr0 1 1 * sl0
-sr0 0 0 * sl0
-sr0 _ _ r sr0
+left0 1 1 * left0SerchRight
+left0 0 0 * left0SerchRight
+left0 _ _ r left0
 
-sl1 1 1 r sl1
-sl1 0 0 r sl1
-sl1 _ _ l cr1
+left1SerchRight 1 1 r left1SerchRight
+left1SerchRight 0 0 r left1SerchRight
+left1SerchRight _ _ l left1checkRight
 
-sl0 1 1 r sl0
-sl0 0 0 r sl0
-sl0 _ _ l cr0
+left0SerchRight 1 1 r left0SerchRight
+left0SerchRight 0 0 r left0SerchRight
+left0SerchRight _ _ l left0CheckRight
 
-cr1 1 _ l r2
-cr1 0 _ l r1
+left1CheckRight 1 _ l result2
+left1CheckRight 0 _ l result1
 
-cr0 1 _ l r1
-cr0 0 _ l r0
+left0CheckRight 1 _ l result1
+left0CheckRight 0 _ l result0
 
-r2 1 1 r s2
-r2 0 0 r s2
-r2 _ _ r onlycopys2
+result2 1 1 r move2
+result2 0 0 r move2
+result2 _ _ r onlyCopySum2
 
-r1 1 1 r s1
-r1 0 0 r s1
-r1 _ _ r onlycopys1
+result1 1 1 r move1
+result1 0 0 r move1
+result1 _ _ r onlyCopySum1
 
-r0 1 1 r s0
-r0 0 0 r s0
+result0 1 1 r move0
+result0 0 0 r move0
+result0 _ _ r onlyCopySum0
 
-s2 1 1 l w1
-s2 0 0 l w1
-s2 _ _ r s2
+move2 1 1 l write1
+move2 0 0 l write1
+move2 _ _ r move2
 
-s1 1 0 l w1
-s1 0 1 l R
-s1 _ _ r s1
+move1 1 0 l write1
+move1 0 1 l write0
+move1 _ _ r move1
 
-s0 1 1 l R
-s0 0 0 l R
-s0 _ _ r s0
+move0 1 1 l write0
+move0 0 0 l write0
+move0 _ _ r move0
 
+lastSumLeft1 1 1 * lastSumLeft1Find
+lastSumLeft1 0 0 * lastSumLeft1Find
+lastSumLeft1 _ _ r lastSumLeft1
 
+lastSumLeft0 1 1 * lastsLeft0Find
+lastSumLeft0 0 0 * lastsLeft0Find
+lastSumLeft0 _ _ r lastSumLeft0
 
-lastsumleft1 1 1 * lastsleft1find
-lastsumleft1 0 0 * lastsleft1find
-lastsumleft1 _ _ r lastsumleft1
+lastSumLeft1Find 1 1 r lastSumLeft1Find
+lastSumLeft1Find 0 0 r lastSumLeft1Find
+lastSumLeft1Find _ _ l checkFinishLeft1
 
-lastsumleft0 1 1 * lastsleft0find
-lastsumleft0 0 0 * lastsleft0find
-lastsumleft0 _ _ r lastsumleft0
+lastSumLeft0Find 1 1 r lastSumLeft0Find
+lastSumLeft0Find 0 0 r lastSumLeft0Find
+lastSumLeft0Find _ _ l checkFinishLeft0
 
-lastsleft1find 1 1 r lastsleft1find
-lastsleft1find 0 0 r lastsleft1find
-lastsleft1find _ _ l checkfinishleft1
+checkFinishLeft1 1 _ l lastSum2
+checkFinishLeft1 0 _ l lastSum1
 
-lastsleft0find 1 1 r lastsleft0find
-lastsleft0find 0 0 r lastsleft0find
-lastsleft0find _ _ l checkfinishleft0
+checkFinishLeft0 1 _ l lastSum1
+checkFinishLeft0 0 _ l lastSum0
 
-checkfinishleft1 1 _ l lastsum2
-checkfinishleft1 0 _ l lastsum1
+lastSum2 1 1 r onlyCopySum2
+lastSum2 0 0 r onlyCopySum2
+lastSum2 _ _ r last2
 
-checkfinishleft0 1 _ l lastsum1
-checkfinishleft0 0 _ l lastsum0
+lastSum1 1 1 r onlyCopySum1
+lastSum1 0 0 r onlyCopySum1
+lastSum1 _ _ r last1
 
-lastsum2 1 1 r onlycopys2
-lastsum2 0 0 r onlycopys2
-lastsum2 _ _ r last2
+lastSum0 1 1 r onlyCopySum0
+lastSum0 0 0 r onlyCopySum0
+lastSum0 _ _ r last0
 
-lastsum1 1 1 r onlycopys1
-lastsum1 0 0 r onlycopys1
-lastsum1 _ _ r last1
+onlyCopySum2 1 1 l copyWrite1
+onlyCopySum2 0 0 l copyWrite1
+onlyCopySum2 _ _ r onlyCopySum2
 
-lastsum0 1 1 r onlycopys0
-lastsum0 0 0 r onlycopys0
-lastsum0 _ _ r last0
+onlyCopySum1 1 0 l copyWrite1
+onlyCopySum1 0 1 l copyWrite0
+onlyCopySum1 _ _ r onlyCopySum1
 
-onlycopys2 1 1 l copywrite1
-onlycopys2 0 0 l copywrite1
-onlycopys2 _ _ r onlycopys2
+onlyCopySum0 1 1 l copyWrite0
+onlyCopySum0 0 0 l copyWrite0
+onlyCopySum0 _ _ r onlyCopySum0
 
-onlycopys1 1 0 l copywrite1
-onlycopys1 0 1 l copywrite0
-onlycopys1 _ _ r onlycopys1
+copyWrite1 _ 1 l copySearch
+copyWrite0 _ 0 l copySearch
 
-onlycopys0 1 1 l copywrite0
-onlycopys0 0 0 l copywrite0
-onlycopys0 _ _ r onlycopys0
+copySearch 1 _ l copyRead1
+copySearch 0 _ l copyRead0
+copySearch _ _ l copySearch
 
-copywrite1 _ 1 l copysearch
-copywrite0 _ 0 l copysearch
+copyRead1 1 1 r copyMove1
+copyRead1 0 0 r copyMove1
+copyRead1 _ _ r finishmove1
 
-copysearch 1 _ l copyread1
-copysearch 0 _ l copyread0
-copysearch _ _ l copysearch
+copyRead0 1 1 r copyMove0
+copyRead0 0 0 r copyMove0
+copyRead0 _ _ r finishMove0
 
-copyread1 1 1 r copymove1
-copyread1 0 0 r copymove1
-copyread1 _ _ r finishmove1
+copyMove1 1 0 l copyWrite1
+copyMove1 0 1 l copyWrite0
+copyMove1 _ _ r copyMove1
 
-copyread0 1 1 r copymove0
-copyread0 0 0 r copymove0
-copyread0 _ _ r finishmove0
+copyMove0 1 1 l copyWrite0
+copyMove0 0 0 l copyWrite0
+copyMove0 _ _ r copyMove0
 
-copymove1 1 0 l copywrite1
-copymove1 0 1 l copywrite0
-copymove1 _ _ r copymove1
-
-copymove0 1 1 l copywrite0
-copymove0 0 0 l copywrite0
-copymove0 _ _ r copymove0
-
-finishmove1 1 0 l lastwrite1
-finishmove1 0 0 l lastwrite1
+finishmove1 1 0 l lastWrite1
+finishmove1 0 0 l lastWrite1
 finishmove1 _ _ r finishmove1
 
-finishmove0 1 1 l lastwrite0
-finishmove0 0 0 l lastwrite0
+finishmove0 1 1 l lastWrite0
+finishmove0 0 0 l lastWrite0
 finishmove0 _ _ r finishmove0
 
-last2 1 1 l lastwrite1
-last2 0 0 l lastwrite1
+last2 1 1 l lastWrite1
+last2 0 0 l lastWrite1
 last2 _ _ r last2
 
-last1 1 0 l lastwrite1
-last1 0 1 l lastwrite0
+last1 1 0 l lastWrite1
+last1 0 1 l lastWrite0
 last1 _ _ r last1
 
-lastwrite1 _ 1 * halt-accept
-lastwrite0 _ 0 * halt-accept
+lastWrite1 _ 1 * halt-accept
+lastWrite0 _ 0 * halt-accept
