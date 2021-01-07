@@ -19,6 +19,7 @@ GNU General Public License v3.0
 
  **Turing Machine**: Is building with:
   * A **tape** divided into cells where each cells contains a simbol from some finite alphabet. 
+  > The alphabet contains a special symbol called white (here written as 'B') it's like a symbol of a stop.
   * A **head** that can read and write symbols on the tape and move the tape left and right one (and only one) cell at a time.
   * A **status record** that stores the status of the Turing machine, one of the finite states. There is a special initial state with which the status log starts.
   * A **finite table** of instructions (occasionally called an action table or transition function).
