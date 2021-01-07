@@ -23,6 +23,8 @@ GNU General Public License v3.0
   * A **head** that can read and write symbols on the tape and move the tape left and right one (and only one) cell at a time.
   * A **status record** that stores the status of the Turing machine, one of the finite states. There is a special initial state with which the status log starts.
   * A **finite table** of instructions (occasionally called an action table or transition function).
+  
+*for more information, see: [Turing Machine](https://es.wikipedia.org/wiki/M%C3%A1quina_de_Turing)*
 
 
 > Our program is in the tape, and our head will move left or right
