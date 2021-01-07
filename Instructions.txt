@@ -43,7 +43,7 @@ left0 _ _ r left0
 
 left1SerchRight 1 1 r left1SerchRight
 left1SerchRight 0 0 r left1SerchRight
-left1SerchRight _ _ l left1checkRight
+left1SerchRight _ _ l left1CheckRight
 
 left0SerchRight 1 1 r left0SerchRight
 left0SerchRight 0 0 r left0SerchRight
@@ -83,8 +83,8 @@ lastSumLeft1 1 1 * lastSumLeft1Find
 lastSumLeft1 0 0 * lastSumLeft1Find
 lastSumLeft1 _ _ r lastSumLeft1
 
-lastSumLeft0 1 1 * lastsLeft0Find
-lastSumLeft0 0 0 * lastsLeft0Find
+lastSumLeft0 1 1 * lastSumLeft0Find
+lastSumLeft0 0 0 * lastSumLeft0Find
 lastSumLeft0 _ _ r lastSumLeft0
 
 lastSumLeft1Find 1 1 r lastSumLeft1Find
@@ -163,6 +163,10 @@ last2 _ _ r last2
 last1 1 0 l lastWrite1
 last1 0 1 l lastWrite0
 last1 _ _ r last1
+
+last0 1 1 l lastWrite0
+last0 0 0 l lastWrite0
+last0 _ _ r last0
 
 lastWrite1 _ 1 * halt-accept
 lastWrite0 _ 0 * halt-accept
