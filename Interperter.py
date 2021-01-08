@@ -25,7 +25,7 @@ line = input()
 tape = list('  '+str(line)+'  ')
 
 while(not(finish)):
-    print('State:',state,', head:', head-2, ', tape:', ''.join(tape))
+    print('State:',state,', head:', head-2, ', tape:', ''.join(tape[:head])+'|'+''.join(tape[head])+'|'+''.join(tape[head+1:]))
     read = tape[head]
     write = rules[state][read]['write']
     move = rules[state][read]['move']
@@ -39,4 +39,4 @@ while(not(finish)):
     if state == 'halt-accept':
         finish = True
 
-print('\nFinish head:', head, ', tape:', ''.join(tape))
+print('\nFinish head:', head-2, ', tape:', ''.join(tape[:head])+'|'+''.join(tape[head])+'|'+''.join(tape[head+1:]))
