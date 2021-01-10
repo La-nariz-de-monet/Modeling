@@ -20,8 +20,8 @@ for line in rfile:
 
 from time import time
 file_pruebas = open('pruebas.txt', 'r')
-tiempo_by_len = {}
-tiempo_by_len['time'] = []
+#tiempo_by_len = {}
+#tiempo_by_len['time'] = []
 #by_num_steps = {}
 #by_num_steps['steps'] = []
 tiempo_by_len = {'longitud='+str(key): [] for key in range(1, 11)}
