@@ -15,7 +15,7 @@ GNU General Public License v3.0
 * Python3
 
 # Description of Turing Machine
-![TuringMachine](TuringMachine.png)
+![TuringMachine](imagenes/TuringMachine.png)
 
  **Turing Machine**: Is building with:
   * A **tape** divided into cells where each cells contains a simbol from some finite alphabet. 
