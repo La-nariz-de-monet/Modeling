@@ -41,14 +41,15 @@ def element_to_graph(file_name):
 
 import matplotlib
 import matplotlib.pyplot as plt
-x,y = element_to_graph('time.txt')
+x,y = element_to_graph('steps.txt')
 fig, ax = plt.subplots()
 #Colocamos una etiqueta en el eje Y
-ax.set_ylabel('Tiempo (s)')
+ax.set_ylabel('Num steps')
 #Colocamos una etiqueta en el eje X
-ax.set_xlabel('Longitud de cadena')
-ax.set_title('Tiempo para resolver la suma binaria')
+ax.set_xlabel('Chain length')
+ax.set_title('Num steps to solve binary sum')
 #Creamos la grafica de barras utilizando 'paises' como eje X y 'ventas' como eje y.
 plt.bar(x, y)
+plt.grid()
 #plt.savefig('barras_simple.png')
 plt.show()
