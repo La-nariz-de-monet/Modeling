@@ -12,8 +12,9 @@ GNU General Public License v3.0
 * About the model of Turing Machine, specifically one adaptation for binary sum with Python 3.x
 
 # General Objectives 
-* Simulate the Turing Machine
 * Understand the Turing Machine
+* Simulate the Turing Machine
+* Implement the binary sum
 
 # System Architecture
 * A **tape** for the simbols from some alphabet
@@ -65,4 +66,6 @@ The instructions are composed as follows:
 
   * The simbol **_** represents a blank space
   
-  * The machine halts when it reaches the state 'halt-accept'
+  * The machine halts when it reaches the instruction 'halt-accept'
+  
+ 
