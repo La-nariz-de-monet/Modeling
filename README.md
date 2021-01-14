@@ -9,10 +9,29 @@
 GNU General Public License v3.0
 
 # Resume 
-* About the model of Turing Machine and adaptation for binary sum with Python3
+* About the model of Turing Machine and one adaptation for binary sum with Python 3.x
+
+# General Objectives 
+* Simulate the Turing Machine
+* Understand the Turing Machine
+
+# System Architecture
+* A **tape** for the simbols from some alphabet
+* A **head** for read and write symbols
+* A **stattus record** for store the status of machine
+* A **finite table/instructions card** for the instructions to work of machine
+
+# Data Source
+* Just we need binary numbers to work 
+
+# Test For Data Acquisition
+* We can write by ourself binary numbers 
+* We can generate different binary numbers and send to turing machine to sum this numbers
 
 # Software Tools
-* Python3
+* Python 3.x
+* Matplotlib
+* Matplotlib.pyplot
 
 # Description of Turing Machine
 ![TuringMachine](imagenes/TuringMachine.png)
@@ -24,9 +43,13 @@ GNU General Public License v3.0
   * A **status record** that stores the status of the Turing machine, one of the finite states. There is a special initial state with which the status log starts.
   * A **finite table** of instructions (occasionally called an action table or transition function).
   
-*for more information, see: [Turing Machine](https://es.wikipedia.org/wiki/M%C3%A1quina_de_Turing)*
+> *for more information, see: [Turing Machine](https://es.wikipedia.org/wiki/M%C3%A1quina_de_Turing)*
 
+## Turing Machine for binary sum working
+Our binary numbers is in the tape, and our head will move left or right
+depending the instructions in the Card and what detected our head. The Instructions Card contains the 
+instructions for behavior of head.
+like the next image: 
+> ![TuringMachineWorking](imagenes/sumBinary.gif)
 
-> Our program is in the tape, and our head will move left or right
-depending the instructions in the Card Number 1. The Card Number 1 contains the 
-instructions for behavior of head. 
+We can see at the bottom the work instructions from our Turing Machine.
