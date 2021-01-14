@@ -9,7 +9,7 @@
 GNU General Public License v3.0
 
 # Resume 
-* About the model of Turing Machine and one adaptation for binary sum with Python 3.x
+* About the model of Turing Machine, specifically one adaptation for binary sum with Python 3.x
 
 # General Objectives 
 * Simulate the Turing Machine
@@ -22,11 +22,11 @@ GNU General Public License v3.0
 * A **finite table/instructions card** for the instructions to work of machine
 
 # Data Source
-* Just we need binary numbers to work 
+* Just we need binary numbers to work (see pruebas.txt file) 
 
 # Test For Data Acquisition
-* We can write by ourself binary numbers 
-* We can generate different binary numbers and send to turing machine to sum this numbers
+* We can write by ourself binary numbers (see Interperter.py file)
+* We can use binary numbers from a .txt file and send to turing machine to sum this numbers (see Interperter_time_steps.py file)
 
 # Software Tools
 * Python 3.x
@@ -38,7 +38,7 @@ GNU General Public License v3.0
 
  **Turing Machine**: Is building with:
   * A **tape** divided into cells where each cells contains a simbol from some finite alphabet. 
-  >> The alphabet contains a special symbol called white (here written as 'B') it's like a symbol that tells us that there is no value.
+      - The alphabet contains a special symbol called white (here written as 'B') it's like a symbol that tells us that there is no value.
   * A **head** that can read and write symbols on the tape and move the tape left and right one (and only one) cell at a time.
   * A **status record** that stores the status of the Turing machine, one of the finite states. There is a special initial state with which the status log starts.
   * A **finite table** of instructions (occasionally called an action table or transition function).
