@@ -52,4 +52,5 @@ instructions for behavior of head.
 like the next image: 
 > ![TuringMachineWorking](imagenes/sumBinary.gif)
 
-We can see at the bottom the work instructions from our Turing Machine.
+We can see at the bottom the work instructions from our Turing Machine (see Instructions.txt file) 
+
