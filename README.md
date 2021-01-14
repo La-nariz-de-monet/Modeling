@@ -23,7 +23,7 @@ GNU General Public License v3.0
 * A **finite table/instructions card** for the instructions to work of machine
 
 # Data Source
-* Just we need binary numbers to work (see pruebas.txt file) 
+* We just need binary numbers to work (see pruebas.txt file) 
 
 # Test For Data Acquisition
 * We can write by ourself binary numbers (see Interperter.py file)
