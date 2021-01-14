@@ -64,3 +64,5 @@ The instructions are composed as follows:
   * Some instructions have a fifth simbols, like: **init2 1 1 r init2** The fifth symbol corresponds to a reference to the following instruction.
 
   * The simbol **_** represents a blank space
+  
+  * The machine halts when it reaches the state 'halt-accept'
