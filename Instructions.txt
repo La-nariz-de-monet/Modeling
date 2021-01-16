@@ -7,6 +7,7 @@ init2 0 0 r init2
 init2 _ _ r write0
 
 write0 _ 0 l moveLeft
+
 write1 _ 1 l moveLeft
 
 
@@ -61,11 +62,11 @@ result2 _ _ r onlyCopySum2
 
 result1 1 1 r move1
 result1 0 0 r move1
-result1 _ _ r onlyCopySum1
+result1 _ _ r copyMove1
 
 result0 1 1 r move0
 result0 0 0 r move0
-result0 _ _ r onlyCopySum0
+result0 _ _ r copyMove0
 
 move2 1 1 l write1
 move2 0 0 l write1
@@ -105,25 +106,18 @@ lastSum2 1 1 r onlyCopySum2
 lastSum2 0 0 r onlyCopySum2
 lastSum2 _ _ r last2
 
-lastSum1 1 1 r onlyCopySum1
-lastSum1 0 0 r onlyCopySum1
+lastSum1 1 1 r copyMove1
+lastSum1 0 0 r copyMove1
 lastSum1 _ _ r last1
 
-lastSum0 1 1 r onlyCopySum0
-lastSum0 0 0 r onlyCopySum0
+lastSum0 1 1 r copyMove0
+lastSum0 0 0 r copyMove0
 lastSum0 _ _ r last0
 
 onlyCopySum2 1 1 l copyWrite1
 onlyCopySum2 0 0 l copyWrite1
 onlyCopySum2 _ _ r onlyCopySum2
 
-onlyCopySum1 1 0 l copyWrite1
-onlyCopySum1 0 1 l copyWrite0
-onlyCopySum1 _ _ r onlyCopySum1
-
-onlyCopySum0 1 1 l copyWrite0
-onlyCopySum0 0 0 l copyWrite0
-onlyCopySum0 _ _ r onlyCopySum0
 
 copyWrite1 _ 1 l copySearch
 copyWrite0 _ 0 l copySearch
@@ -134,11 +128,11 @@ copySearch _ _ l copySearch
 
 copyRead1 1 1 r copyMove1
 copyRead1 0 0 r copyMove1
-copyRead1 _ _ r finishmove1
+copyRead1 _ _ r last1
 
 copyRead0 1 1 r copyMove0
 copyRead0 0 0 r copyMove0
-copyRead0 _ _ r finishMove0
+copyRead0 _ _ r last0
 
 copyMove1 1 0 l copyWrite1
 copyMove1 0 1 l copyWrite0
@@ -148,13 +142,6 @@ copyMove0 1 1 l copyWrite0
 copyMove0 0 0 l copyWrite0
 copyMove0 _ _ r copyMove0
 
-finishmove1 1 0 l lastWrite1
-finishmove1 0 0 l lastWrite1
-finishmove1 _ _ r finishmove1
-
-finishmove0 1 1 l lastWrite0
-finishmove0 0 0 l lastWrite0
-finishmove0 _ _ r finishmove0
 
 last2 1 1 l lastWrite1
 last2 0 0 l lastWrite1
