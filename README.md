@@ -14,7 +14,7 @@ GNU General Public License v3.0
 # General Objectives 
 * Understand the Turing Machine
 * Simulate the Turing Machine
-* Implement the binary sum
+* Implement the binary sum in a Turing Machine 
 
 # System Architecture
 * A **tape** for the simbols from some alphabet
@@ -23,16 +23,24 @@ GNU General Public License v3.0
 * A **finite table/instructions card** for the instructions to work of machine
 
 # Data Source
-* We just need binary numbers to work (see pruebas.txt file) 
+* We just need two binary numbers to work (see pruebas.txt file) 
 
 # Test For Data Acquisition
-* We can write by ourself binary numbers (see Interperter.py file)
+* We can write two binary numbers by ourself (see Interperter.py file)
 * We can use binary numbers from a .txt file and send to turing machine to sum this numbers (see Interperter_time_steps.py file)
 
 # Software Tools
 * Python 3.x
 * Matplotlib
 * Matplotlib.pyplot
+
+# How to use our code about Turing Machine?
+- If you want just sum two numbers, you need to use **Interperter.py**, that's the **main program** with our implementation of Turing Machine
+> This program needs to work the file *Instructions.txt*, so, try to don't alterate this file!
+- If you want to evaluate time or/and steps, you need to use **Interperter_time_steps.py**, that's an adaptation of our **main program** with our implementation of Turing Machine
+> This program read the binary numbers from *pruebas.txt*, there you can put your binary numbers. It's really important how the dictionaries for time and steps are created, because, we save the contain in a two files: *time.txt* and *steps.txt* and **Grafica.py** use this files for generate the graph. 
+> Look that, *pruebas.txt* have from one to ten two numbers with lenght 1, and from eleven to twenty, two numbers with lenght 2. Thats really important 
+because we using the line number when we save the mean in our dictionary. 
 
 # Description of Turing Machine
 ![TuringMachine](imagenes/TuringMachine.png)
@@ -67,5 +75,8 @@ The instructions are composed as follows:
   * The simbol **_** represents a blank space
   
   * The machine halts when it reaches the instruction 'halt-accept'
+  
+  ## About our time tests and number of steps 
+  - We write ten numbers with lenght equals one, ten numbers with lenght equals two ... we write ten numbers with lenght equals ten. 
   
  
