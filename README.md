@@ -78,5 +78,11 @@ The instructions are composed as follows:
   
   ## About our time tests and number of steps 
   - We write ten numbers with lenght equals one, ten numbers with lenght equals two ... we write ten numbers with lenght equals ten. 
-  
+  We used ten numbers because when we running our program for get the time data and steps data. So, we used ten numbers for get the mean 
+  of time and steps. With this way we obtain certainty about the time that we spend for sum two binary numbers with lenght equals *n* and how many steps we need to sum two binary numbers with lenght equals *n*. Where *n* is the lenght of our two binary numbers. 
  
+ > In the following graphs we can see the results of our experimentation:
+ ### Time
+ ![Time to sum two binary numbers](imagenes/time.png)
+ ### Steps
+ ![Steps to sum two binary numbers](imagenes/Steps.png)
