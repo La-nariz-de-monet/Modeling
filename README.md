@@ -19,7 +19,7 @@ GNU General Public License v3.0
 # System Architecture
 * A **tape** for the simbols from some alphabet
 * A **head** for read and write symbols
-* A **stattus record** for store the status of machine
+* A **status record** for store the status of machine
 * A **finite table/instructions card** for the instructions to work of machine
 
 # Data Source
@@ -39,7 +39,7 @@ GNU General Public License v3.0
 > This program needs to work the file *Instructions.txt*, so, try to don't alterate this file!
 - If you want to evaluate time or/and steps, you need to use **Interperter_time_steps.py**, that's an adaptation of our **main program** with our implementation of Turing Machine
 > This program read the binary numbers from *pruebas.txt*, there you can put your binary numbers. It's really important how the dictionaries for time and steps are created, because, we save the contain in a two files: *time.txt* and *steps.txt* and **Grafica.py** use this files for generate the graph. 
-> Look that, *pruebas.txt* have from one to ten two numbers with lenght 1, and from eleven to twenty, two numbers with lenght 2. Thats really important 
+> Look that, *pruebas.txt* have from one to ten two numbers with length 1, and from eleven to twenty, two numbers with length 2. Thats really important 
 because we using the line number when we save the mean in our dictionary. 
 
 # Description of Turing Machine
@@ -77,9 +77,10 @@ The instructions are composed as follows:
   * The machine halts when it reaches the instruction 'halt-accept'
   
   ## About our time tests and number of steps 
-  - We write ten numbers with lenght equals one, ten numbers with lenght equals two ... we write ten numbers with lenght equals ten. 
+  - We write ten numbers with length equals one, ten numbers with length equals two ... we write ten numbers with length equals ten. 
   We used ten numbers because when we running our program for get the time data and steps data. So, we used ten numbers for get the mean 
-  of time and steps. With this way we obtain certainty about the time that we spend for sum two binary numbers with lenght equals *n* and how many steps we need to sum two binary numbers with lenght equals *n*. Where *n* is the lenght of our two binary numbers. 
+  of time and steps. With this way we obtain certainty about the time that we spend for sum two binary numbers with length equals *n* and
+  how many steps we need to sum two binary numbers with length equals *n*. Where *n* is the length of our two binary numbers. 
  
  > In the following graphs we can see the results of our experimentation:
  ### Time
