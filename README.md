@@ -84,5 +84,9 @@ The instructions are composed as follows:
  > In the following graphs we can see the results of our experimentation:
  ### Time
  ![Time to sum two binary numbers](imagenes/time.png)
+ > As we can see, in the case of time. We have a considerable change in 7-digit and 10-digit chains.
+ Maybe is not relevant because just we get +-8 microsegs. But maybe is really relevant with lenght chains like 100-digits or more. 
  ### Steps
  ![Steps to sum two binary numbers](imagenes/Steps.png)
+ > In the case of steps, we can see that is proportional to the lenght chains. If we have chains with more
+ lenght, the number of steps increase. 
