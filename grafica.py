@@ -33,7 +33,7 @@ def element_to_graph(file_name):
 
     for key, values in y_steps.items():
         y_steps[key] = sum(values)/len(values)
-    
+
     y_step = list(y_steps.values())
 
     return(x_longitud, y_step)
@@ -41,13 +41,21 @@ def element_to_graph(file_name):
 
 import matplotlib
 import matplotlib.pyplot as plt
-x,y = element_to_graph('steps.txt')
+# Si se quiere obtener los ejes x, y para gráficar
+# de steps.txt basta con cambiar el nombre del archivo
+# por el correspondiente
+x,y = element_to_graph('time.txt')
+#x,y = element_to_graph('steps.txt')
 fig, ax = plt.subplots()
 #Colocamos una etiqueta en el eje Y
-ax.set_ylabel('Num steps')
+# Si estas trabajando con steps.txt
+# debes cambiar por:
+#ax.set_ylabel('Num steps')
+ax.set_ylabel('Time (s)')
 #Colocamos una etiqueta en el eje X
 ax.set_xlabel('Chain length')
-ax.set_title('Num steps to solve binary sum')
+#ax.set_title('Num steps to solve binary sum')
+ax.set_title('Time to solve binary sum')
 #Creamos la grafica de barras utilizando 'paises' como eje X y 'ventas' como eje y.
 plt.bar(x, y)
 plt.grid()
