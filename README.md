@@ -91,3 +91,7 @@ The instructions are composed as follows:
  ![Steps to sum two binary numbers](imagenes/Steps.png)
  > In the case of steps, we can see that is proportional to the length chains. If we have chains with more
  length, the number of steps increase. 
+
+# References
+- About Turing Machine: colaboradores de Wikipedia. (2021, 26 enero). Máquina de Turing. Wikipedia, la enciclopedia libre. https://es.wikipedia.org/wiki/M%C3%A1quina_de_Turing
+- About develop our machine instructions: Morphett, A. M. (2014). Turing machine simulator. Turing machine simulator. http://morphett.info/turing/
