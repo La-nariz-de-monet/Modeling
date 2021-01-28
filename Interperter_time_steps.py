@@ -1,7 +1,7 @@
 
 rules = {}
 rfile = open("Instructions.txt", "r")
-
+# lectura de las instrucciones para la máquina
 for line in rfile:
     states = line.split(' ')
     if(states != ['\n']):
@@ -20,13 +20,33 @@ for line in rfile:
 
 from time import time
 file_pruebas = open('pruebas.txt', 'r')
-#tiempo_by_len = {}
-#tiempo_by_len['time'] = []
-#by_num_steps = {}
-#by_num_steps['steps'] = []
+
+# Generamos dos diccionarios, uno donde se guardará el promedio
+# del tiempo y otro donde se guardara el promedio del número de pasos
+# Los diccionarios tienen la siguiente forma:
+# {'longitud=1': [], 'longitud=2': [], 'longitud=3': [], 'longitud=4': [],
+# 'longitud=5': [], 'longitud=6': [], 'longitud=7': [], 'longitud=8': [],
+# 'longitud=9': [], 'longitud=10': []}
+# La clave corresponde a la longitud de la cadena
+
 tiempo_by_len = {'longitud='+str(key): [] for key in range(1, 11)}
 by_num_steps = {'longitud='+str(key): [] for key in range(1, 11)}
-contador = 1 # Para llevar el control de la longitud: 11=2, 21=3, 31=4, 41=5, 51=6, 61=7, 71=8, 81=9, 91=10
+# Para llevar el control de la longitud: 11=2, 21=3, 31=4, 41=5,
+# 51=6, 61=7, 71=8, 81=9, 91=10
+# AQUÍ ES DONDE ES IMPORTANTE REVISAR EL NÚMERO DE LINEAS DEL
+# ARCHIVO pruebas.txt pues los if's funcionan gracias a eso.
+# De la línea 1 a la linea 10 de pruebas.txt
+# tenemos dos números binarios con longitud 1 y
+# separados por un espacio en cada renglon
+# De la linea 11 a la 20 tenemos dos números binarios de longitud
+# dos en cada renglon y separados por espacio
+# del 21 al 30 son de longitud 3
+# del 31 al 40 de longitud 4
+# del 41 a 50 de longitud 5
+# de 51 a 60 de longitud 6
+# ...
+# de 91 a 100 de longitud 100
+contador = 1
 for lines in file_pruebas:
     finish = False
     head = 2
@@ -36,7 +56,7 @@ for lines in file_pruebas:
     #contador = 1 # Para llevar el control de la longitud 11=2; 21=3; 31=4, 41=5, 51=6, 61=7, 71=8, 81=9, 91=10
     timer = [] # Para almacenar los tiempos y obtener el promedio del tiempo
     num_steps = 0 #Para contar el número de pasos
-    tmp_steps = []
+    tmp_steps = [] # para almacenar los pasos 
 
 
     line = lines[0:len(lines)-1] #para no leer el salto de linea
@@ -68,7 +88,7 @@ for lines in file_pruebas:
         num_steps += 1
 
     tmp_steps.append(num_steps)
-    elapsed_time = time()-start_time
+    elapsed_time = time()-start_time # para obtener el tiempo transcurrido total
     start_time = 0
     #print(tmp_steps)
     num_steps = 0 # Una vez efectuada la suma, reiniciamos los pasos
@@ -76,6 +96,12 @@ for lines in file_pruebas:
     contador += 1
     timer.append(elapsed_time)
 
+    # efectuara el promedio de pasos y de tiempo
+    # para los números de longitud 1
+    # es decir de 1 a 10 en el archivo pruebas.txt
+    # Es decir cuando detecta 11 que es cuando empiezan
+    # los de longitud 2, se entiende que ya han pasado
+    # todos los de longitud 1.
     if contador == 11:
         promedio = float(sum(timer)/len(timer))
         promedio_steps = float(sum(tmp_steps)/len(tmp_steps))
@@ -86,6 +112,9 @@ for lines in file_pruebas:
         timer = []
         tmp_steps = [] # reiniciamos el arreglo de pasos que nos servira para determinar el promedio
 
+    # efectuara el promedio de pasos y de tiempo
+    # para los números de longitud 2
+    # es decir de 11 a 20 en el archivo pruebas.txt
     if contador == 21:
         promedio = float(sum(timer)/len(timer))
         promedio_steps = float(sum(tmp_steps)/len(tmp_steps))
@@ -97,6 +126,9 @@ for lines in file_pruebas:
         timer = []
         tmp_steps = []
 
+    # efectuara el promedio de pasos y de tiempo
+    # para los números de longitud 3
+    # es decir de 21 a 30 en el archivo pruebas.txt
     if contador == 31:
         promedio = float(sum(timer)/len(timer))
         promedio_steps = float(sum(tmp_steps)/len(tmp_steps))
@@ -107,6 +139,9 @@ for lines in file_pruebas:
         timer = []
         tmp_steps = []
 
+    # efectuara el promedio de pasos y de tiempo
+    # para los números de longitud 4
+    # es decir de 31 a 40 en el archivo pruebas.txt
     if contador == 41:
         promedio = float(sum(timer)/len(timer))
         promedio_steps = float(sum(tmp_steps)/len(tmp_steps))
@@ -117,6 +152,9 @@ for lines in file_pruebas:
         timer = []
         tmp_steps = []
 
+    # efectuara el promedio de pasos y de tiempo
+    # para los números de longitud 5
+    # es decir de 41 a 50 en el archivo pruebas.txt
     if contador == 51:
         promedio = float(sum(timer)/len(timer))
         promedio_steps = float(sum(tmp_steps)/len(tmp_steps))
@@ -127,6 +165,9 @@ for lines in file_pruebas:
         timer = []
         tmp_steps = []
 
+    # efectuara el promedio de pasos y de tiempo
+    # para los números de longitud 6
+    # es decir de 51 a 60 en el archivo pruebas.txt
     if contador == 61:
         promedio = float(sum(timer)/len(timer))
         promedio_steps = float(sum(tmp_steps)/len(tmp_steps))
@@ -137,7 +178,9 @@ for lines in file_pruebas:
         timer = []
         tmp_steps = []
 
-
+    # efectuara el promedio de pasos y de tiempo
+    # para los numerosde longitud 7
+    # es decir de 61 a 70 en el archivo pruebas.txt
     if contador == 71:
         promedio = float(sum(timer)/len(timer))
         promedio_steps = float(sum(tmp_steps)/len(tmp_steps))
@@ -148,6 +191,9 @@ for lines in file_pruebas:
         timer = []
         tmp_steps = []
 
+    # efectuara el promedio de pasos y de tiempo
+    # para los números de longitud 8
+    # es decir de 71 a 80 en el archivo pruebas.txt
     if contador == 81:
         promedio = float(sum(timer)/len(timer))
         promedio_steps = float(sum(tmp_steps)/len(tmp_steps))
@@ -158,6 +204,9 @@ for lines in file_pruebas:
         timer = []
         tmp_steps = []
 
+    # efectuara el promedio de pasos y de tiempo
+    # para los números de longitud 9
+    # es decir de 81 a 90 en el archivo pruebas.txt
     if contador == 91:
         promedio = float(sum(timer)/len(timer))
         promedio_steps = float(sum(tmp_steps)/len(tmp_steps))
@@ -168,6 +217,9 @@ for lines in file_pruebas:
         timer = []
         tmp_steps = []
 
+    # efectuara el promedio de pasos y de tiempo
+    # para los números de longitud 10
+    # es decir de 91 a 100 en el archivo pruebas.txt
     if contador == 100:
         promedio = float(sum(timer)/len(timer))
         promedio_steps = float(sum(tmp_steps)/len(tmp_steps))
@@ -180,6 +232,9 @@ for lines in file_pruebas:
 
 
 print("Tiempo")
+# almacenamos el promedio de tiempo en el archivo time.txt
+# cada ves que se almacene se almacenaran 10 líneas
+# correspondientes cada una a la longitud: 1, 2, 3, ... 9, 10
 with open('time.txt', 'a') as file:
     for key, value in tiempo_by_len.items():
         value = f'{key} {value[0]}\n'
@@ -187,6 +242,9 @@ with open('time.txt', 'a') as file:
 
 
 print("Pasos")
+# almacenamos el promedio en el número de pasos en el archivo
+# steps.txt, cada ocasión en que se almacene se almacenaran 10
+# líneas correspondientes cada una a la longitud: 1, 2, 3, ... 9, 10
 with open('steps.txt', 'a') as file:
     for key, value in by_num_steps.items():
         value = f'{key} {value[0]}\n'
