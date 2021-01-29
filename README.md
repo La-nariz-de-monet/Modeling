@@ -58,6 +58,32 @@ because we using the line number when we save the mean in our dictionary.
   
 > *for more information, see: [Turing Machine](https://es.wikipedia.org/wiki/M%C3%A1quina_de_Turing)*
 
+# An easy description of Turing Machine 
+Suppose you have two notebooks (A and B), one of them (A for example) contains
+the letters of the alphabet (or some letters of the alphabet) written in a pseudo-random way and the other (in B) has
+nothing, you can write whatever you want concerning the letters that are in notebook A. 
+
+In B you write down the instructions of what you are going to do when you see a certain letter in notebook A. 
+
+So, let's say you start reading notebook A letter by letter. For each letter, you review the instructions
+you previously wrote in B (unless you memorize them). This will slightly modify the flow of your reading of notebook A. 
+
+> **Example:**
+
+In your notebook A you have the letters: a, b, c, d, e
+
+In your notebook B you have the instructions: 
+ - When you detect the letter b -> delete the previous letter.
+ - when you detect the letter c -> you ignore the following letter
+ - you finish when you detect the letter e.
+
+If we write what we get from the instructions in B, we have: b, c, e.
+
+And that's it, this is a turing machine! In this case **tape** was your notebook A, **head** was you and 
+**finite table** was your notebook B. **status record** it was what you were doing, every step of the way. 
+Read a letter, review the instructions. The actions you basically did
+
+
 ## Turing Machine for binary sum working
 Our binary numbers is in the tape, and our head will move left or right
 depending the instructions in the Card and what detected our head. The Instructions Card contains the 
