@@ -79,7 +79,10 @@ In your notebook B you have the instructions:
 
 If we write what we get from the instructions in B, we have: b, c, e.
 
-And that's it, this is a turing machine! In this case **tape** was your notebook A, **head** was you and 
+And that's it, this is a turing machine! You only need to write down the symbols you are going 
+to work with and the working instructions to operate with these symbols. 
+
+ In this case **tape** was your notebook A, **head** was you and 
 **finite table** was your notebook B. **status record** it was what you were doing, every step of the way. 
 Read a letter, review the instructions. The actions you basically did
 
