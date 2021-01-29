@@ -1,9 +1,9 @@
 # Turing Machine & Binary Sum
 
 # Contact information
-- Gustavo Alfredo Zárate Acosta / gustavoza20@hotmail.com
-- Fernando Nateras Bautista / fnaterasb1@gmail.com
-- José Vidal Cardona Rosas / vrosas832@gmail.com
+- Gustavo Alfredo Zárate Acosta / gustavoalfredoza@comunidad.unam.mx
+- Fernando Nateras Bautista / fnaterasb@comunidad.unam.mx
+- José Vidal Cardona Rosas / ladivcr@comunidad.unam.mx
 
 # Type of licence
 GNU General Public License v3.0
@@ -115,7 +115,9 @@ The instructions are composed as follows:
  ### Time
  ![Time to sum two binary numbers](imagenes/time.png)
  > As we can see, in the case of time. We have a considerable change in 7-digit and 10-digit chains.
+ This happens by the instructions used by the machine when doing sums of that length.
  Maybe is not relevant because just we get +-8 microsegs. But maybe is really relevant with length chains like 100-digits or more. 
+ 
  ### Steps
  ![Steps to sum two binary numbers](imagenes/Steps.png)
  > In the case of steps, we can see that is proportional to the length chains. If we have chains with more
